@@ -1,0 +1,4 @@
+# Force GitHub to detect this as C++
+*.hpp linguist-language=C++
+*.cpp linguist-language=C++
+*.h linguist-language=C++
