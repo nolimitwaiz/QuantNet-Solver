@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuantNet-Solver Visualization</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <link rel="stylesheet" href="styles.css?v=5">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>QuantNet-Solver <span class="beta-tag">BETA</span></h1>
+            <p class="subtitle">Newton-based QRE Poker Solver</p>
+        </header>
+
+        <div class="status-bar">
+            <div class="status-item">
+                <span class="label">Status:</span>
+                <span id="connection-status" class="value disconnected">Disconnected</span>
+            </div>
+            <div class="status-item">
+                <span class="label">Game:</span>
+                <span id="game-name" class="value">-</span>
+            </div>
+            <div class="status-item">
+                <span class="label">Beta:</span>
+                <span id="current-beta" class="value">-</span>
+            </div>
+            <div class="status-item">
+                <span class="label">Iteration:</span>
+                <span id="current-iter" class="value">-</span>
+            </div>
+            <div class="status-item">
+                <span class="label">Residual:</span>
+                <span id="current-residual" class="value">-</span>
+            </div>
+            <div class="status-item">
+                <span class="label">Exploitability:</span>
+                <span id="current-exploit" class="value">-</span>
+            </div>
+            <div class="status-item">
+                <span class="label">EV (P0):</span>
+                <span id="current-ev" class="value">-</span>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <div class="panel" id="strategy-panel">
+                <h2>Strategy Profile</h2>
+                <div class="strategy-grid">
+                    <div class="player-column" id="strategy-p0">
+                        <h3>Player 0 <span>(Dealer)</span></h3>
+                        <div class="player-strategies"></div>
+                    </div>
+                    <div class="player-column" id="strategy-p1">
+                        <h3>Player 1 <span>(Responder)</span></h3>
+                        <div class="player-strategies"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel" id="convergence-panel">
+                <h2>Convergence</h2>
+                <svg id="convergence-chart"></svg>
+            </div>
+        </div>
+
+        <footer>
+            <p>Connect the solver with: <code>./quantnet_solver --game kuhn</code></p>
+        </footer>
+    </div>
+
+    <script src="app.js?v=5"></script>
+</body>
+</html>

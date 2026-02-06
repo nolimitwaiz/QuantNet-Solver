@@ -1,0 +1,350 @@
+/* QuantNet-Solver Visualization Styles */
+
+:root {
+    --bg-primary: #1a1a2e;
+    --bg-secondary: #16213e;
+    --bg-panel: #1f2940;
+    --text-primary: #e0e0e0;
+    --text-secondary: #a0a0a0;
+    --accent: #4CAF50;
+    --accent-secondary: #FF9800;
+    --border: #2d3a4f;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--border);
+}
+
+header h1 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--accent);
+    margin-bottom: 5px;
+}
+
+.beta-tag {
+    font-size: 0.5em;
+    background: #FF9800;
+    color: #1a1a2e;
+    padding: 2px 8px;
+    border-radius: 4px;
+    vertical-align: super;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+header .subtitle {
+    color: var(--text-secondary);
+    font-size: 1rem;
+}
+
+.status-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    background-color: var(--bg-secondary);
+    padding: 15px 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.status-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.status-item .label {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+}
+
+.status-item .value {
+    font-family: 'Fira Code', 'Consolas', monospace;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.status-item .value.connected {
+    color: var(--accent);
+}
+
+.status-item .value.disconnected {
+    color: #f44336;
+}
+
+.status-item .value.error {
+    color: #ff5722;
+}
+
+.status-item .value.waiting {
+    color: #FFC107;
+}
+
+.status-item .value.complete {
+    color: #4CAF50;
+}
+
+.main-content {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    gap: 20px;
+}
+
+@media (max-width: 1100px) {
+    .main-content {
+        grid-template-columns: 1fr;
+    }
+}
+
+.panel {
+    background-color: var(--bg-panel);
+    border-radius: 8px;
+    padding: 20px;
+    border: 1px solid var(--border);
+}
+
+.panel h2 {
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-bottom: 15px;
+    color: var(--text-primary);
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border);
+}
+
+/* Convergence Chart */
+#convergence-chart {
+    width: 100%;
+    height: 300px;
+}
+
+.axis text {
+    fill: var(--text-secondary);
+    font-size: 11px;
+}
+
+.axis path,
+.axis line {
+    stroke: var(--border);
+}
+
+.axis-label {
+    fill: var(--text-secondary);
+    font-size: 12px;
+}
+
+.legend text {
+    fill: var(--text-secondary);
+    font-size: 11px;
+}
+
+/* Strategy Display - Two-Column Layout */
+.strategy-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+@media (max-width: 700px) {
+    .strategy-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.player-column {
+    max-height: 600px;
+    overflow-y: auto;
+}
+
+.player-column h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border);
+    color: var(--text-primary);
+}
+
+.player-column h3 span {
+    color: var(--text-secondary);
+    font-weight: 400;
+    font-size: 0.85rem;
+}
+
+.player-strategies {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* Card Groups */
+.card-group {
+    background-color: var(--bg-secondary);
+    border-radius: 8px;
+    padding: 12px;
+}
+
+.card-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.card-badge .card-symbol {
+    font-size: 1.1rem;
+}
+
+.card-badge.jack {
+    background-color: rgba(74, 144, 217, 0.2);
+    color: #4A90D9;
+}
+
+.card-badge.queen {
+    background-color: rgba(255, 193, 7, 0.2);
+    color: #FFC107;
+}
+
+.card-badge.king {
+    background-color: rgba(255, 152, 0, 0.2);
+    color: #FF9800;
+}
+
+/* Decision Points */
+.decision-point {
+    margin-top: 8px;
+    padding: 8px;
+    background-color: var(--bg-primary);
+    border-radius: 6px;
+}
+
+.decision-context {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    margin-bottom: 6px;
+    font-style: italic;
+}
+
+.decision-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.action {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.action-label {
+    width: 45px;
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    text-transform: capitalize;
+}
+
+.bar-container {
+    flex: 1;
+    height: 14px;
+    background-color: var(--bg-panel);
+    border-radius: 3px;
+    overflow: hidden;
+    min-width: 60px;
+}
+
+.bar {
+    height: 100%;
+    border-radius: 3px;
+    transition: width 0.2s ease;
+}
+
+.action-prob {
+    width: 42px;
+    font-family: 'Fira Code', 'Consolas', monospace;
+    font-size: 0.75rem;
+    text-align: right;
+    color: var(--text-primary);
+}
+
+.action-ev {
+    width: 70px;
+    font-family: 'Fira Code', 'Consolas', monospace;
+    font-size: 0.7rem;
+    text-align: right;
+}
+
+/* Scrollbar styling */
+.player-column::-webkit-scrollbar {
+    width: 6px;
+}
+
+.player-column::-webkit-scrollbar-track {
+    background: var(--bg-secondary);
+    border-radius: 3px;
+}
+
+.player-column::-webkit-scrollbar-thumb {
+    background: var(--border);
+    border-radius: 3px;
+}
+
+.player-column::-webkit-scrollbar-thumb:hover {
+    background: #3d4f6f;
+}
+
+/* Beta transition markers on chart */
+.beta-marker {
+    stroke: #4A90D9;
+    stroke-width: 1;
+    stroke-dasharray: 4, 3;
+    opacity: 0.6;
+}
+
+.beta-label {
+    fill: #4A90D9;
+    font-size: 9px;
+    font-family: 'Fira Code', 'Consolas', monospace;
+}
+
+footer {
+    margin-top: 20px;
+    text-align: center;
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+}
+
+footer code {
+    font-family: 'Fira Code', 'Consolas', monospace;
+    background-color: var(--bg-secondary);
+    padding: 2px 8px;
+    border-radius: 4px;
+    color: var(--accent);
+}

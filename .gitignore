@@ -1,0 +1,25 @@
+# Build directories
+build/
+cmake-build-*/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Generated files
+viz/solver_output.json
+*.o
+*.a
+*.so
+*.dylib
+
+# Temporary files
+*.tmp
+*.temp

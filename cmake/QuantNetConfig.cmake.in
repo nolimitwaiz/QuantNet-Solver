@@ -1,0 +1,6 @@
+# QuantNet-Solver CMake configuration
+@PACKAGE_INIT@
+
+include("${CMAKE_CURRENT_LIST_DIR}/QuantNetTargets.cmake")
+
+check_required_components(QuantNet)
